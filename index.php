@@ -1,69 +1,144 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--==============================================  Header Starts ==================================== -->
+<?php include 'header.php'; ?>
+<!-- =============================================  Header Ends   ======================================  -->
+ 
 
-    <title>Blood Donator Finder</title>
-  </head>
-  <body>
-    <!-- =========================================
-                          Nav bar
-        ============================================ -->
 
-          <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">Blood Donator Finder</a>
+<!-- 
+========================================================
+                Joumbotron
+========================================================
+-->
 
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+<div class="jumbotron">
+  <h1 class="display-4">Hello, Blood Donator Finder</h1>
+  <p class="lead">Blood donation clubs do a very important and essential service for the community. This project will help to make it easier for the members and the donors to connect and find each other.</p>
+  <hr class="my-4">
+  <p>The project is designed based on practical and situational issues. It may not meet the optimal level of solution but will for sure be a good contribution to the community. </p>
+  <p class="lead">
+    <a class="btn btn-danger btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+
+
+
+<!-- 
+========================================================
+      Joumbotron
+========================================================
+-->
+
+
+
+ 
+<!-- 
+========================================================
+  master row
+============================================================= -->
+
+<!-- 
+========================================================
+  master row
+============================================================= -->
+
+
+<!-- 
+========================================================
+  master row
+============================================================= -->
+<div class="row m-1">
+  
+
+    <div class="col-md-4 m-1 p-2 border-left border-danger"  style="border-width: 10px !important;">
+        <div>
+          <h3 class="text-muted">Search by Blood Group</h3>
+          <form class="form my-2 my-lg-0">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="A+">
+                <label class="form-check-label" for="inlineCheckbox1">A+</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="A-">
+                <label class="form-check-label" for="inlineCheckbox2">A-</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="B+">
+                <label class="form-check-label" for="inlineCheckbox1">B+</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="B-">
+                <label class="form-check-label" for="inlineCheckbox2">B-</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="O+">
+                <label class="form-check-label" for="inlineCheckbox1">O+</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="O-">
+                <label class="form-check-label" for="inlineCheckbox2">O-</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="AB+">
+                <label class="form-check-label" for="inlineCheckbox1">AB+</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="AB-">
+                <label class="form-check-label" for="inlineCheckbox2">AB-</label>
+              </div>
+
+              <br>
+              <div class="form-check">
+                <button class="btn btn-danger my-2 my-sm-0 text-white m-1" style="margin: 10px !important;" type="submit">Search</button>
+              </div>
+          </form>
+        </div>
+
+    </div> 
+
+    
+      <!-- ============================Search BY City====================== -->
+
+    <div class="col-md-3 m-1 p-2 border-left border-danger"  style="border-width: 10px !important;">
+        <div>
+          <h3 class="text-muted">Search by City</h3>
+          <form class="form my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search"  style="margin: 10px !important;" >
+                <button class="btn btn-danger my-2 my-sm-0" type="submit" style="margin: 10px !important;" >Search</button>
               </form>
-            </div>
-          </nav>
+        </div>
+    </div> 
+      <!-- ============================Search BY City====================== -->
+
+    <div class="col-md-3 m-1 p-2 border-left border-danger"  style="border-width: 10px !important;">
+        <div>
+          <h3 class="text-muted">Search by Name</h3>
+          <form class="form my-2 my-lg-0" action="">
+                <input class="form-control mr-sm-2" type="search" placeholder="Name" aria-label="Search"  style="margin: 10px !important;" >
+                <button class="btn btn-danger my-2 my-sm-0" type="submit" style="margin: 10px !important;" >Search</button>
+              </form>
+        </div>
+    </div> 
 
 
-    <!-- =========================================
-                          Nav bar
-        ============================================ -->
 
 
-        <!--------------------------------- Header Ends----------------------- -->
+</div>
+
+<!-- ========================================================
+  master row
+============================================================= -->
 
 
 
 
 
-<!-- --------------------------------------Footer ----------------------------------------- -->
-        <!-- =========================================
-                          Footer
-        ============================================ -->
-          <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-bottom">
-          <a class="navbar-brand" href="#">&copy; All rights reserved by Blood Donator Finder.Developed by NJA ID-135</a>
-          </nav>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
-</html>
+
+
+
+
+<!--==============================================  footer Starts ==================================== -->
+<?php include 'footer.php'; ?>
+<!-- =============================================  footer Ends   ======================================  -->
+   
