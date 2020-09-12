@@ -31,18 +31,6 @@
 
 
 
- 
-<!-- 
-========================================================
-  master row
-============================================================= -->
-
-<!-- 
-========================================================
-  master row
-============================================================= -->
-
-
 <!-- 
 ========================================================
   master row
@@ -53,43 +41,43 @@
     <div class="col-md-4 m-1 p-2 border-left border-danger"  style="border-width: 10px !important;">
         <div>
           <h3 class="text-muted">Search by Blood Group</h3>
-          <form class="form my-2 my-lg-0">
+          <form class="form my-2 my-lg-0" method="POST">
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="A+">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="searchdata" value="A+">
                 <label class="form-check-label" for="inlineCheckbox1">A+</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="A-">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="searchdata" value="A-">
                 <label class="form-check-label" for="inlineCheckbox2">A-</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="B+">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="searchdata" value="B+">
                 <label class="form-check-label" for="inlineCheckbox1">B+</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="B-">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="searchdata" value="B-">
                 <label class="form-check-label" for="inlineCheckbox2">B-</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="O+">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="searchdata" value="O+">
                 <label class="form-check-label" for="inlineCheckbox1">O+</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="O-">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="searchdata" value="O-">
                 <label class="form-check-label" for="inlineCheckbox2">O-</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="AB+">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="searchdata" value="AB+">
                 <label class="form-check-label" for="inlineCheckbox1">AB+</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="AB-">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="searchdata" value="AB-">
                 <label class="form-check-label" for="inlineCheckbox2">AB-</label>
               </div>
 
               <br>
               <div class="form-check">
-                <button class="btn btn-danger my-2 my-sm-0 text-white m-1" style="margin: 10px !important;" type="submit">Search</button>
+                <button class="btn btn-danger my-2 my-sm-0 text-white m-1" name="search"  style="margin: 10px !important;" type="submit">Search</button>
               </div>
           </form>
         </div>
@@ -102,9 +90,9 @@
     <div class="col-md-3 m-1 p-2 border-left border-danger"  style="border-width: 10px !important;">
         <div>
           <h3 class="text-muted">Search by City</h3>
-          <form class="form my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search"  style="margin: 10px !important;" >
-                <button class="btn btn-danger my-2 my-sm-0" type="submit" style="margin: 10px !important;" >Search</button>
+          <form class="form my-2 my-lg-0" method="POST">
+                <input class="form-control mr-sm-2" type="text" name="searchdata" placeholder="City" aria-label="Search"  style="margin: 10px !important;" >
+                <button class="btn btn-danger my-2 my-sm-0" name="search" type="submit" style="margin: 10px !important;" >Search</button>
               </form>
         </div>
     </div> 
@@ -113,9 +101,9 @@
     <div class="col-md-3 m-1 p-2 border-left border-danger"  style="border-width: 10px !important;">
         <div>
           <h3 class="text-muted">Search by Name</h3>
-          <form class="form my-2 my-lg-0" action="">
-                <input class="form-control mr-sm-2" type="search" placeholder="Name" aria-label="Search"  style="margin: 10px !important;" >
-                <button class="btn btn-danger my-2 my-sm-0" type="submit" style="margin: 10px !important;" >Search</button>
+          <form class="form my-2 my-lg-0" method="POST">
+                <input class="form-control mr-sm-2" type="text" name="searchdata" placeholder="Name" aria-label="Search"  style="margin: 10px !important;" >
+                <button class="btn btn-danger my-2 my-sm-0" type="submit" name="search" style="margin: 10px !important;" >Search</button>
               </form>
         </div>
     </div> 

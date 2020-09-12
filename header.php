@@ -27,7 +27,7 @@
             <a class="navbar-brand" href="./index.php">Blood Donator Finder</a>
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <ul class="navbar-nav mr-2 mt-2 mt-lg-0">
                 <li class="nav-item active">
                   <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -42,9 +42,11 @@
                 </li>
                 
               </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+              <!-- NaV Bar  Srarch BOX -->
+              <form class="form-inline my-2 my-lg-0" method="POST" >
+                <input class=" form-control mr-sm-2" name="searchdata" type="search" placeholder="City,Donor,Blood Grp " aria-label="Search">
+                <button class="btn btn-light my-2 my-sm-0" name="search" type="submit" >Search</button>
+                <!-- Search code below -->
               </form>
             </div>
           </nav>
@@ -55,6 +57,64 @@
     <!-- =========================================
                           Nav bar
         ============================================ -->
+
+
+<!-- ---------------------------------------Nav bar Search Code------------------------------------------------- -->
+<div class="row">
+  <div class="col-md-8 offset-md-1">
+
+<?php 
+  include 'connect.php';//Mysql DataBase Connection $connect
+
+  if (isset($_POST['search'])) {
+    $search=mysqli_real_escape_string($connect,$_POST['searchdata']);
+
+
+    $query= "SELECT*FROM register_donor WHERE donor_bloodgroup='$search' OR donor_city='$search' OR donor_name='$search'OR donor_age='$search' OR donor_postalcode='$search' ORDER BY donor_city,donor_bloodgroup DESC";
+
+    //`register_donor`(`donor_id`, `donor_bloodgroup`, `donor_city`, `donor_name`, `donor_age`, `donor_nid_no`, `donor_mobile`, `donor_address`, `donor_postalcode`)
+
+                  $result= mysqli_query($connect, $query);
+                  $num_rows=mysqli_num_rows($result);
+
+                    ?>
+                    <div class="row">
+                      <h6 class="text-info ">
+                        Total results loaded <?php echo $num_rows; ?>
+                      </h6>
+                    </div>
+
+                 <?php  
+                  if ($num_rows > 0){
+                    while ($row = mysqli_fetch_assoc($result)){
+
+                      //echo "Row  ".$num_rows."  donor_bloodgroup".$row['donor_bloodgroup'].", "."  donor_city".$row['donor_city']." "."  donor_name".$row['donor_name']." "."  donor_age".$row['donor_age'].", "."  donor_mobile".$row['donor_mobile'];
+               ?>
+
+               
+                   <div class="row alert alert-danger p-2 text-center">
+                    <h6>
+                      <?php //echo $num_rows; ?>    City/Village: <?php echo $row['donor_city']; ?>       <?php echo $row['donor_bloodgroup']; ?>        Name: <?php echo $row['donor_name']; ?>      Age:<?php echo $row['donor_age']; ?>       Mobile no: <a href="tel: <?php echo $row['donor_mobile']; ?>"><?php echo $row['donor_mobile']; ?></a>
+                    </h6>
+                     
+                   </div>
+                 
+              
+
+
+              <?php 
+                      }
+                    }
+
+                  }
+              ?>
+  </div>
+</div>
+<!-- ---------------------------------------Nav bar Search Code------------------------------------------------- -->
+
+
+
+
 
 <div class="row m-1">
   <!-- -----===============================Urgent Request========================================----- -->
@@ -70,8 +130,8 @@
           <div class="col-md-9">
             <marquee>
               <?php 
-                     
-                  $connect= mysqli_connect("localhost","root","","bdfclub");
+                     include 'connect.php';//Mysql DataBase Connection $connect
+                  //$connect= mysqli_connect("localhost","root","","bdfclub");
                   $query= "SELECT*FROM req_blood ORDER BY req_date DESC";
                   $result= mysqli_query($connect, $query);
                   $num_rows=mysqli_num_rows($result);
@@ -84,17 +144,11 @@
               <!--  Slider  -->
                 <em class="display-4 text-white">
                  | Blood Group:<b> <?php echo $row['req_bloodgroup']; ?> </b> City:<?php echo $row['req_city']; ?>, Hospital: <b> <?php echo $row['req_hospital']; ?> </b>, Call: <i><?php echo $row['req_contactnum']; ?></i> |
-<!--                  | Blood Group:<b>B+</b> City:Khulna, Hospital: <b>GMC</b>, Call: <i>019 12 123456</i> |
-                 | Blood Group:<b>A-</b> City:Khulna, Hospital: <b>KMCH</b>, Call: <i>019 12 123456</i> |
-                 | Blood Group:<b>B+</b> City:Khulna, Hospital: <b>KMCH</b>, Call: <i>019 12 123456</i> |
-                 | Blood Group:<b>A-</b> City:Khulna, Hospital: <b>KMCH</b>, Call: <i>019 12 123456</i> |
-                 | Blood Group:<b>O-</b> City:Khulna, Hospital: <b>KMCH</b>, Call: <i>019 12 123456</i> | -->
+
                 </em>
               <!--  Slider  -->
               <?php 
                         }
-
-
                       }
 
                     ?>
@@ -109,10 +163,6 @@
 
   <!-- -----===============================Urgent Request========================================----- -->
 </div>
-
-
-
-
 
         <!--------------------------------- Header Ends----------------------- -->
 

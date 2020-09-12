@@ -49,7 +49,7 @@ session_start();
 <?php include '../header.php'; ?>
 <!-- =============================================  Header Ends   ======================================  -->
  
-	<div class="header">
+	<div class="">
 		<h2>Login</h2>
 	</div>
 	

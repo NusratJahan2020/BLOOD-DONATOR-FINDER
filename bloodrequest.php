@@ -40,7 +40,7 @@ if(isset($_POST['submit']))
   $req_patientgender=mysqli_real_escape_string($connect,($_POST['req_patientgender']));
   $req_comments =mysqli_real_escape_string($connect,($_POST['req_comments']));
 
-  $insert= "INSERT INTO req_blood(req_bloodgroup, req_numofbags,req_contactname,req_contactnum,req_city,req_hospital,req_patientname,req_patientage,req_patientgender,req_comments, req_date, req_time ) VALUES( '$req_bloodgroup', '$req_numofbags', '$req_contactname', '$req_contactnum', '$req_city', '$req_hospital', '$req_patientname', '$req_patientage', '$req_patientgender', '$req_comments','$req_date', '$req_time')";
+  $insert= "INSERT INTO req_blood(req_bloodgroup,req_numofbags,req_contactname,req_contactnum,req_city,req_hospital,req_patientname,req_patientage,req_patientgender,req_comments, req_date, req_time ) VALUES( '$req_bloodgroup', '$req_numofbags', '$req_contactname', '$req_contactnum', '$req_city', '$req_hospital', '$req_patientname', '$req_patientage', '$req_patientgender', '$req_comments','$req_date', '$req_time')";
 
   if(mysqli_query($connect, $insert))
   {
